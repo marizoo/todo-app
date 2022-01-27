@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ShoppingForm from './ShoppingForm';
 import ShoppingItems from './ShoppingItems';
 import './shoppingStyle.css';
@@ -6,7 +6,13 @@ import {nanoid} from 'nanoid';
 
 
 const ShoppingList = () => {
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState(() => {
+    // get local stored data
+    const saved = localStorage.getItem("todoos");
+    const savedDatas = JSON.parse(saved);
+    return savedDatas || "";
+  });
+
 
   const handleNewInput = (newText) => {
     const newList = {
@@ -30,9 +36,15 @@ const ShoppingList = () => {
     setDatas(newDatas);
   }
 
+  // completed items count
   const countChecks = datas.filter(data => data.isCompleted === true)
 
-  
+
+  // save to local storage
+  useEffect(() => {
+    const json = JSON.stringify(datas);
+    localStorage.setItem("todoos", json);
+  }, [datas]);
 
   return (
       <div className='shopping'>

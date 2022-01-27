@@ -1,21 +1,16 @@
-https://www.code-boost.com/react-local-storage/
-
 ## DESCRIPTION:
-A simple react todo app.
+A simple react Shopping list app, with 'save to local storage' feature.
 
 ## OUTCOME:
-Getting used to creating React App + useState hook.
+Getting used to creating React + 'save to local storage' App.
 
 ## TECH STACKS:
-- React
-- Hooks: useState.
+- React.
+- React Hooks: useState & useEffect.
 - Styling: CSS with 'B.E.M' naming convention.
 
 ## PROGRESS:
 - Done: 100%;
-
-## NEXT UPDATE:
-- to add "save to local storage" feature.
 
 ## How to run
 `yarn install`
@@ -23,4 +18,4 @@ Getting used to creating React App + useState hook.
 
 
 ## IMAGE:
-![Screenshot of the site](./screenshots/49.todoApp1.png)
+![Screenshot of the site](./screenshots/49.todoApp2.png)
